@@ -6,17 +6,17 @@
  * http://nicoespeon.com/en/2013/05/properly-isolate-variables-in-javascript/
  */
 (function (window, document, undefined) {
-    var interval_bot;
-    var state_element = document.getElementById('state');
+    var interval_bot,
+        state_element = document.getElementById('state'),
 
-    var buttons = {
-        'login': document.getElementById('login'),
-        'logout': document.getElementById('logout'),
-        'start_collecting': document.getElementById('start_collecting'),
-        'stop_collecting': document.getElementById('stop_collecting'),
-        'start_bot': document.getElementById('start_bot'),
-        'stop_bot': document.getElementById('stop_bot')
-    };
+        buttons = {
+            'login': document.getElementById('login'),
+            'logout': document.getElementById('logout'),
+            'start_collecting': document.getElementById('start_collecting'),
+            'stop_collecting': document.getElementById('stop_collecting'),
+            'start_bot': document.getElementById('start_bot'),
+            'stop_bot': document.getElementById('stop_bot')
+        };
 
     buttons['login'].addEventListener('click', login);
     buttons['logout'].addEventListener('click', logout);
