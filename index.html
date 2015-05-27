@@ -8,9 +8,17 @@
       <b>State:</b> Idle
     </div>
 
-    <form id="login_form" action="http://koeln.pennergame.de/login/check/" method="POST" target="request_window">
-      ID: <input type="text" name="username" id="username" value="">
-      PW: <input type="password" name="password" id="password" value="">
+    <form id="login_form"
+          action="http://koeln.pennergame.de/login/check/"
+          method="POST"
+          target="request_window">
+
+      <label for="username">ID:</label>
+      <input type="text" name="username" id="username" value="">
+
+      <label for="password">PW:</label>
+      <input type="password" name="password" id="password" value="">
+
       <input type="button" value="Login" onClick="javascript:login()">
       <input type="button" value="Logout" onClick="javascript:logout()"><br/><br/>
       <input type="button" value="Pfandsammeln Start" onClick="javascript:pfandsammeln()">
@@ -20,39 +28,81 @@
     </form>
 
 
-    <form id="logout_form" action="http://koeln.pennergame.de/logout/" method="POST" target="request_window">
+    <form id="logout_form"
+          action="http://koeln.pennergame.de/logout/"
+          method="POST"
+          target="request_window">
     </form>
 
 
     <h2>Dev Settings</h2>
-    <form id="pfandsammel_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
-      <b>Pfandsammeln Begin</b><br/> Zeit: <input type="text" name="sammeln" id="sammeln" value="10">
-      Konzentrieren: <input type="text" name="konzentrieren" id="konzentrieren" value="1">
+    <form id="pfandsammel_form"
+          action="http://koeln.pennergame.de/activities/bottle/"
+          method="POST"
+          target="request_window">
+
+      <b>Pfandsammeln Begin</b><br/>
+
+      <label for="sammeln">Zeit:</label>
+      <input type="text" name="sammeln" id="sammeln" value="10">
+
+      <label for="konzentrieren">Konzentrieren:</label>
+      <input type="text" name="konzentrieren" id="konzentrieren" value="1">
     </form>
 
 
-    <form id="pfandsammel_cancel_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
+    <form id="pfandsammel_cancel_form"
+          action="http://koeln.pennergame.de/activities/bottle/"
+          method="POST"
+          target="request_window">
+
       <b>Pfandsammeln Cancel</b><br/>
-      Type: <input type="text" name="type" id="type" value="1">
-      Time: <input type="text" name="time" id="time" value="10">
-      Cancel: <input type="text" name="cancel" id="cancel" value="1">
-      Submit2: <input type="text" name="Submit2" id="Submit2" value="Abbrechen">
+
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="1">
+
+      <label for="time">Time:</label>
+      <input type="text" name="time" id="time" value="10">
+
+      <label for="cancel">Cancel:</label>
+      <input type="text" name="cancel" id="cancel" value="1">
+
+      <label for="Submit2">Submit2:</label>
+      <input type="text" name="Submit2" id="Submit2" value="Abbrechen">
     </form>
 
 
-    <form id="clearpfand_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
+    <form id="clearpfand_form"
+          action="http://koeln.pennergame.de/activities/bottle/"
+          method="POST"
+          target="request_window">
+
       <b>Einkaufwagen leeren</b><br/>
-      Type: <input type="text" name="type" id="type" value="1">
-      Time: <input type="text" name="time" id="time" value="">
-      Bottlecollect_pending: <input type="text" name="bottlecollect_pending" id="bottlecollect_pending" value="True">
-      Submit2: <input type="text" name="Submit2" id="Submit2" value="Einkaufswagen+ausleeren">
+
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="1">
+
+      <label for="time">Time:</label>
+      <input type="text" name="time" id="time" value="">
+
+      <label for="bottlecollect_pending">Bottlecollect_pending:</label>
+      <input type="text" name="bottlecollect_pending" id="bottlecollect_pending" value="True">
+
+      <label for="Submit2">Submit2:</label>
+      <input type="text" name="Submit2" id="Submit2" value="Einkaufswagen+ausleeren">
     </form>
 
 
     <br/>
     <br/>
 
-    <iframe src="" name="request_window" width="1" height="1" frameBorder="0" onClick="javascript:login()"></iframe><br/>
+    <iframe src=""
+            name="request_window"
+            width="1"
+            height="1"
+            frameBorder="0"
+            onClick="javascript:login()">
+    </iframe><br/>
 
     <script src="./script.js"></script>
   </body>
