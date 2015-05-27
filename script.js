@@ -26,32 +26,27 @@
     buttons['stop_bot'].addEventListener('click', pfandbot_cancel);
     document.getElementById('target_frame').addEventListener('click', login);
 
-    function login()
-    {
+    function login() {
         document.getElementById('state').innerHTML="<b>State:</b> Logged in.";
         document.getElementById('login_form').submit();
     }
 
-    function logout()
-    {
+    function logout() {
         document.getElementById('state').innerHTML="<b>State:</b> Logged out.";
         document.getElementById('logout_form').submit();
     }
 
-    function pfandsammeln()
-    {
+    function pfandsammeln() {
         document.getElementById('state').innerHTML="<b>State:</b> Sammle für "+document.getElementById('sammeln').value+" Minuten Pfandflaschen..";
         document.getElementById('pfandsammel_form').submit();
     }
 
-    function pfandsammeln_cancel()
-    {
+    function pfandsammeln_cancel() {
         document.getElementById('state').innerHTML="<b>State:</b> Pfandsammeln gestoppt..";
         document.getElementById('pfandsammel_cancel_form').submit();
     }
 
-    function pfandbot()
-    {
+    function pfandbot() {
         setTimeout(clearwagen,200);
         setTimeout(pfandsammeln,2000);
         document.getElementById('sammeln').value="10";
@@ -60,14 +55,12 @@
         document.getElementById('state').innerHTML="<b>State:</b> Pfandbot gestartet..";
     }
 
-    function pfandbot_cancel()
-    {
+    function pfandbot_cancel() {
         document.getElementById('state').innerHTML="<b>State:</b> Pfandbot gestoppt..";
         clearInterval(interval_bot);
     }
 
-    function clearwagen()
-    {
+    function clearwagen() {
         document.getElementById('clearpfand_form').submit();
     }
 }(this, this.document));
