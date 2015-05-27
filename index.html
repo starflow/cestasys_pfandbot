@@ -13,7 +13,7 @@
       ID: <input type="text" name="username" id="username" value="">
       PW: <input type="password" name="password" id="password" value="">
       <input type="button" value="Login" onClick="javascript:login()">
-      <input type="button" value="Logout" onClick="javascript:logout()"><br \><br \>
+      <input type="button" value="Logout" onClick="javascript:logout()"><br/><br/>
       <input type="button" value="Pfandsammeln Start" onClick="javascript:pfandsammeln()">
       <input type="button" value="Pfandsammeln Stop" onClick="javascript:pfandsammeln_cancel()">
       <input type="button" value="Pfandflaschen Bot Starten" onClick="javascript:pfandbot()">
@@ -30,14 +30,14 @@
     <h2>Dev Settings</h2>
     <!-- Pfandsammeln Starten Formular !-->
     <form id="pfandsammel_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
-      <b>Pfandsammeln Begin</b><br \> Zeit: <input type="text" name="sammeln" id="sammeln" value="10">
+      <b>Pfandsammeln Begin</b><br/> Zeit: <input type="text" name="sammeln" id="sammeln" value="10">
       Konzentrieren: <input type="text" name="konzentrieren" id="konzentrieren" value="1">
     </form>
     <!---------------------------------------------------------------------------------------!-->
 
     <!-- Pfandsammeln Stoppen Formular !-->
     <form id="pfandsammel_cancel_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
-      <b>Pfandsammeln Cancel</b><br \>
+      <b>Pfandsammeln Cancel</b><br/>
       Type: <input type="text" name="type" id="type" value="1">
       Time: <input type="text" name="time" id="time" value="10">
       Cancel: <input type="text" name="cancel" id="cancel" value="1">
@@ -47,7 +47,7 @@
 
     <!-- Einkaufswagen leeren Formular !-->
     <form id="clearpfand_form" action="http://koeln.pennergame.de/activities/bottle/" method="POST" target="request_window">
-      <b>Einkaufwagen leeren</b><br \>
+      <b>Einkaufwagen leeren</b><br/>
       Type: <input type="text" name="type" id="type" value="1">
       Time: <input type="text" name="time" id="time" value="">
       Bottlecollect_pending: <input type="text" name="bottlecollect_pending" id="bottlecollect_pending" value="True">
@@ -56,10 +56,10 @@
     <!---------------------------------------------------------------------------------------!-->
 
 
-    <br \>
-    <br \>
+    <br/>
+    <br/>
 
-    <iframe src="" name="request_window" width="1" height="1" frameBorder="0" onClick="javascript:login()"></iframe><br \>
+    <iframe src="" name="request_window" width="1" height="1" frameBorder="0" onClick="javascript:login()"></iframe><br/>
 
     <script src="./script.js"></script>
   </body>
