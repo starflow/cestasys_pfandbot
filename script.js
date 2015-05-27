@@ -27,22 +27,23 @@
     document.getElementById('target_frame').addEventListener('click', login);
 
     function login() {
-        document.getElementById('state').innerHTML="<b>State:</b> Logged in.";
+        setState('Logged in..');
         document.getElementById('login_form').submit();
     }
 
     function logout() {
-        document.getElementById('state').innerHTML="<b>State:</b> Logged out.";
+        setState('Logged out..');
         document.getElementById('logout_form').submit();
     }
 
     function pfandsammeln() {
-        document.getElementById('state').innerHTML="<b>State:</b> Sammle für "+document.getElementById('sammeln').value+" Minuten Pfandflaschen..";
+        var collection_duration = document.getElementById('sammeln').value;
+        setState('Sammle für ' + collection_duration + ' Minuten Pfandflaschen..');
         document.getElementById('pfandsammel_form').submit();
     }
 
     function pfandsammeln_cancel() {
-        document.getElementById('state').innerHTML="<b>State:</b> Pfandsammeln gestoppt..";
+        setState('Pfandsammeln gestoppt..');
         document.getElementById('pfandsammel_cancel_form').submit();
     }
 
@@ -56,11 +57,15 @@
     }
 
     function pfandbot_cancel() {
-        document.getElementById('state').innerHTML="<b>State:</b> Pfandbot gestoppt..";
+        setState('Pfandbot gestoppt..');
         clearInterval(interval_bot);
     }
 
     function clearwagen() {
         document.getElementById('clearpfand_form').submit();
+    }
+
+    function setState(text) {
+        stateElement.textContent = text;
     }
 }(this, this.document));
