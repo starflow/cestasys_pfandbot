@@ -14,7 +14,7 @@ function logout()
 
 function pfandsammeln()
 {
- document.getElementById('state').innerHTML="<b>State:</b> Sammle für "+document.getElementById('sammeln').value+" Minuten Pfandflaschen..";
+ document.getElementById('state').innerHTML="<b>State:</b> Sammle fÃ¼r "+document.getElementById('sammeln').value+" Minuten Pfandflaschen..";
  document.getElementById('pfandsammel_form').submit();
 }
 
