@@ -19,12 +19,12 @@
       <label for="password">PW:</label>
       <input type="password" name="password" id="password" value="">
 
-      <input type="button" value="Login" onClick="javascript:login()">
-      <input type="button" value="Logout" onClick="javascript:logout()"><br/><br/>
-      <input type="button" value="Pfandsammeln Start" onClick="javascript:pfandsammeln()">
-      <input type="button" value="Pfandsammeln Stop" onClick="javascript:pfandsammeln_cancel()">
-      <input type="button" value="Pfandflaschen Bot Starten" onClick="javascript:pfandbot()">
-      <input type="button" value="Pfandflaschen Bot Stoppen" onClick="javascript:pfandbot_cancel()">
+      <input id="login" type="button" value="Login">
+      <input id="logout" type="button" value="Logout"><br/><br/>
+      <input id="start_collecting" type="button" value="Pfandsammeln Start">
+      <input id="stop_collecting" type="button" value="Pfandsammeln Stop">
+      <input id="start_bot" type="button" value="Pfandflaschen Bot Starten">
+      <input id="stop_bot" type="button" value="Pfandflaschen Bot Stoppen">
     </form>
 
 
@@ -100,8 +100,7 @@
             name="request_window"
             width="1"
             height="1"
-            frameBorder="0"
-            onClick="javascript:login()">
+            frameBorder="0">
     </iframe><br/>
 
     <script src="./script.js"></script>

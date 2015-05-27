@@ -5,8 +5,26 @@
  * Read more about this here:
  * http://nicoespeon.com/en/2013/05/properly-isolate-variables-in-javascript/
  */
-(function (window, undefined) {
+(function (window, document, undefined) {
     var interval_bot;
+    var state_element = document.getElementById('state');
+
+    var buttons = {
+        'login': document.getElementById('login'),
+        'logout': document.getElementById('logout'),
+        'start_collecting': document.getElementById('start_collecting'),
+        'stop_collecting': document.getElementById('stop_collecting'),
+        'start_bot': document.getElementById('start_bot'),
+        'stop_bot': document.getElementById('stop_bot')
+    };
+
+    buttons['login'].addEventListener('click', login);
+    buttons['logout'].addEventListener('click', logout);
+    buttons['start_collecting'].addEventListener('click', pfandsammeln);
+    buttons['stop_collecting'].addEventListener('click', pfandsammeln_cancel);
+    buttons['start_bot'].addEventListener('click', pfandbot);
+    buttons['stop_bot'].addEventListener('click', pfandbot_cancel);
+    document.getElementById('target_frame').addEventListener('click', login);
 
     function login()
     {
@@ -52,4 +70,4 @@
     {
         document.getElementById('clearpfand_form').submit();
     }
-}(this));
+}(this, this.document));
