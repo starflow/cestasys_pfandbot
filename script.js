@@ -66,6 +66,6 @@
     }
 
     function setState(text) {
-        stateElement.textContent = text;
+        state_element.textContent = text;
     }
 }(this, this.document));
