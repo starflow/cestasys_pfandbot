@@ -10,42 +10,38 @@
         state_element = document.getElementById('state'),
 
         buttons = {
-            'login': document.getElementById('login'),
-            'logout': document.getElementById('logout'),
-            'start_collecting': document.getElementById('start_collecting'),
-            'stop_collecting': document.getElementById('stop_collecting'),
-            'start_bot': document.getElementById('start_bot'),
-            'stop_bot': document.getElementById('stop_bot')
+            'start': document.getElementById('start'),
+            'stop': document.getElementById('stop')
+        },
+
+        forms = {
+            'login': document.getElementById('login_form'),
+            'logout': document.getElementById('logout_form'),
+            'pfandsammel': document.getElementById('pfandsammel_form'),
+            'cancel': document.getElementById('cancel_form'),
+            'clear': document.getElementById('clear_form')
         };
 
-    buttons['login'].addEventListener('click', login);
-    buttons['logout'].addEventListener('click', logout);
-    buttons['start_collecting'].addEventListener('click', pfandsammeln);
-    buttons['stop_collecting'].addEventListener('click', pfandsammeln_cancel);
-    buttons['start_bot'].addEventListener('click', pfandbot);
-    buttons['stop_bot'].addEventListener('click', pfandbot_cancel);
-    document.getElementById('target_frame').addEventListener('click', login);
+    buttons['start'].addEventListener('click', pfandbot);
+    buttons['stop'].addEventListener('click', pfandbot_cancel);
 
-    function login() {
+    forms['login'].addEventListener('submit', function () {
         setState('Logged in..');
-        document.getElementById('login_form').submit();
-    }
+    });
 
-    function logout() {
+    forms['logout'].addEventListener('submit', function () {
         setState('Logged out..');
-        document.getElementById('logout_form').submit();
-    }
+    });
 
-    function pfandsammeln() {
+    forms['pfandsammel'].addEventListener('submit', function () {
         var collection_duration = document.getElementById('sammeln').value;
         setState('Sammle für ' + collection_duration + ' Minuten Pfandflaschen..');
         document.getElementById('pfandsammel_form').submit();
-    }
+    });
 
-    function pfandsammeln_cancel() {
+    forms['cancel'].addEventListener('submit', function () {
         setState('Pfandsammeln gestoppt..');
-        document.getElementById('pfandsammel_cancel_form').submit();
-    }
+    });
 
     function pfandbot() {
         setTimeout(clearwagen,200);

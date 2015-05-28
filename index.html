@@ -2,97 +2,80 @@
 <html>
   <head>
     <title>Pfandflaschen Bot</title>
+    <meta charset="UTF-8">
   </head>
   <body>
     <div>
-      <b>State:</b> <span id="state">Idle</span>
+      <b>State:</b>
+      <span id="state">Idle</span>
     </div>
 
+    <h3>Login</h3>
     <form id="login_form"
           action="http://koeln.pennergame.de/login/check/"
           method="POST"
           target="request_window">
 
-      <label for="username">ID:</label>
+      <label for="username">Benutzername:</label>
       <input type="text" name="username" id="username" value="">
 
-      <label for="password">PW:</label>
+      <label for="password">Passwort:</label>
       <input type="password" name="password" id="password" value="">
 
-      <input id="login" type="button" value="Login">
-      <input id="logout" type="button" value="Logout"><br/><br/>
-      <input id="start_collecting" type="button" value="Pfandsammeln Start">
-      <input id="stop_collecting" type="button" value="Pfandsammeln Stop">
-      <input id="start_bot" type="button" value="Pfandflaschen Bot Starten">
-      <input id="stop_bot" type="button" value="Pfandflaschen Bot Stoppen">
+      <input id="login" type="submit" value="Login">
     </form>
 
-
+    <h3>Logout</h3>
     <form id="logout_form"
           action="http://koeln.pennergame.de/logout/"
           method="POST"
           target="request_window">
+          <input id="logout" type="submit" value="Logout"><br/><br/>
     </form>
 
-
-    <h2>Dev Settings</h2>
+    <h3>Pfandsammeln</h3>
     <form id="pfandsammel_form"
           action="http://koeln.pennergame.de/activities/bottle/"
           method="POST"
           target="request_window">
 
-      <b>Pfandsammeln Begin</b><br/>
-
       <label for="sammeln">Zeit:</label>
       <input type="text" name="sammeln" id="sammeln" value="10">
 
-      <label for="konzentrieren">Konzentrieren:</label>
-      <input type="text" name="konzentrieren" value="1">
+      <input hidden="hidden" type="text" name="konzentrieren" value="1">
       <input type="submit" value="Start">
     </form>
 
-
-    <form id="pfandsammel_cancel_form"
+    <form id="cancel_form"
           action="http://koeln.pennergame.de/activities/bottle/"
           method="POST"
           target="request_window">
 
-      <b>Pfandsammeln Cancel</b><br/>
-
-      <label for="pfandsammel_type">Type:</label>
-      <input type="text" name="type" value="1">
-
-      <label for="pfandsammel_time">Time:</label>
-      <input type="text" name="time" value="10">
-
-      <label for="cancel">Cancel:</label>
-      <input type="text" name="cancel" value="1">
+      <input type="hidden" name="type" value="1">
+      <input type="hidden" name="time" value="10">
+      <input type="hidden" name="cancel" value="1">
 
       <input type="submit" name="Submit2" value="Abbrechen">
     </form>
 
-
-    <form id="clearpfand_form"
+    <form id="clear_form"
           action="http://koeln.pennergame.de/activities/bottle/"
           method="POST"
           target="request_window">
 
-      <b>Einkaufwagen leeren</b><br/>
-
-      <label for="type">Type:</label>
-      <input type="text" name="type" value="1">
-
-      <label for="time">Time:</label>
-      <input type="text" name="time" value="">
-
-      <label for="bottlecollect_pending">Bottlecollect_pending:</label>
-      <input type="text" name="bottlecollect_pending" value="True">
+      <input type="hidden" name="type" value="1">
+      <input type="hidden" name="time" value="">
+      <input type="hidden" name="bottlecollect_pending" value="True">
 
       <input type="submit" name="Submit2" value="Einkaufswagen ausleeren">
     </form>
 
-    <br/>
-    <br/>
+    <h3>Bot</h3>
+    <div>
+      <input id="start" type="button" value="Pfandflaschen Bot Starten">
+      <input id="stop" type="button" value="Pfandflaschen Bot Stoppen">
+    </div>
+
     <iframe src=""
             name="request_window"
             width="1"
