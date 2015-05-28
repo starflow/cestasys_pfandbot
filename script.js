@@ -36,7 +36,6 @@
     forms['pfandsammel'].addEventListener('submit', function () {
         var collection_duration = document.getElementById('sammeln').value;
         setState('Sammle für ' + collection_duration + ' Minuten Pfandflaschen..');
-        document.getElementById('pfandsammel_form').submit();
     });
 
     forms['cancel'].addEventListener('submit', function () {
@@ -44,21 +43,25 @@
     });
 
     function pfandbot() {
-        setTimeout(clearwagen,200);
-        setTimeout(pfandsammeln,2000);
-        document.getElementById('sammeln').value="10";
-        interval_bot = setInterval(pfandsammeln,610000); //Every 10 Minutes
-        setTimeout(pfandbot,610000);
-        document.getElementById('state').innerHTML="<b>State:</b> Pfandbot gestartet..";
+        var ten_m_in_ms = 10 * 60000; // Ten minutes multiplied by 60k ms in a minute
+
+        setState('Pfandbot gestartet..');
+        clearInterval(interval_bot); // Make sure there is only one interval
+        document.getElementById('sammeln').value = "10";
+
+        interval_bot = setInterval(pfandsammeln, ten_m_in_ms + 15000);
+        pfandsammeln();
+        function pfandsammeln() {
+            forms['pfandsammel'].submit();
+            setTimeout(function () {
+                forms['clear'].submit();
+            }, ten_m_in_ms + 10000); // clear the shopping cart, ten seconds after collecting ended
+        };
     }
 
     function pfandbot_cancel() {
         setState('Pfandbot gestoppt..');
         clearInterval(interval_bot);
-    }
-
-    function clearwagen() {
-        document.getElementById('clearpfand_form').submit();
     }
 
     function setState(text) {
